@@ -3,22 +3,21 @@
  */
 
 public class Stopwatch {
-    private long startTime;
-    private long stopTime;
-    
-    public static final double NANOS_PER_SEC = 1000000000.0;
+    private static final double NANOS_PER_SEC = 1_000_000_000.0;
+    private long startTime = 0L;
+    private long stopTime = 0L;
     
     /**
      * start the stop watch.
      */
-    public void start(){
+    public void start() {
         startTime = System.nanoTime();
     }
     
     /**
      * stop the stop watch.
      */
-    public void stop(){
+    public void stop() {
         stopTime = System.nanoTime();
     }
     
@@ -27,20 +26,11 @@ public class Stopwatch {
      *
      * @return the time recorded on the stopwatch in seconds
      */
-    public double time(){
+    public double time() {
         return (stopTime - startTime) / NANOS_PER_SEC;
     }
     
-    public String toString(){
-        return "elapsed time: " + time() + " seconds.";
-    }
-    
-    /**
-     * elapsed time in nanoseconds.
-     *
-     * @return the time recorded on the stopwatch in nanoseconds
-     */
-    public long timeInNanoseconds(){
-        return (stopTime - startTime);
+    public String toString() {
+        return "Elapsed time: " + time() + " seconds.";
     }
 }

@@ -1,11 +1,19 @@
+/**
+ * The main entry for the project
+ */
 public class Driver {
     
-    public static void main(String[] args){
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
         Stopwatch stopwatch = new Stopwatch();
         
-        WordGame game = new WordGame("wordlist.txt");
-        WordGameExp exp = new WordGameExp("wordlist.txt");
-    
+        EditDistanceList game = new EditDistanceList("wordlist.txt");
+        EditDistanceSet exp = new EditDistanceSet("wordlist.txt");
+        
         System.out.println("--- Using ArrayLists ---");
         
         System.out.println("tree to fall in 6");
@@ -28,7 +36,7 @@ public class Driver {
         stopwatch.stop();
         System.out.println(stopwatch);
         System.out.println();*/
-    
+        
         System.out.println("--- Using a HashSet ---");
         System.out.println("tree to fall in 6");
         stopwatch.start();
